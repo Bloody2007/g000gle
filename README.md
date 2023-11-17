@@ -1,1 +1,1 @@
-# g000gle.com
+# g000gle

